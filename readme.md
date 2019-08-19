@@ -26,7 +26,7 @@ severity:
 ## Tip
 The maximum and minimum bounds have a hover tooltip with their own values.
 
-## Full example
+## Full examples
 ```yaml
 type: 'custom:barometer-gauge-card'
 entity: sensor.barometer
@@ -37,6 +37,18 @@ severity:
   green: 1020
   yellow: 1000
   red: 900
+```
+```yaml
+type: 'custom:barometer-gauge-card'
+entity: sensor.temperature
+entity_min: sensor.temperature_min_this_week
+entity_max: sensor.temperature_max_this_week
+title: Thermometer
+style: thermometer
+severity:
+  green: 22
+  yellow: 24
+  red: 27
 ```
 
 Maybe more to come ! PR are welcome and i can have a look to features requests.
