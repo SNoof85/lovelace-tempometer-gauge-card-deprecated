@@ -1,5 +1,5 @@
-# lovelace-barometer-gauge-card
-A Home Assistant lovelace custom card for barometer.
+# lovelace-tempometer-gauge-card
+A Home Assistant lovelace custom gauge card for barometer or thermometer.
 
 ![Barometer style](https://user-images.githubusercontent.com/25659602/63027159-b7464980-beac-11e9-8d7a-2143eeead609.png)![Thermometer style](https://user-images.githubusercontent.com/25659602/63298831-b65e4f00-c2d4-11e9-88fc-292450dfe8c3.png)
 
@@ -7,7 +7,7 @@ A Home Assistant lovelace custom card for barometer.
 ## Usage
 Add this custom card to your home assistant instance. Reference it into your lovelace configuration.
 
-Add a custom card to your lovelace : `'custom:barometer-gauge-card'`.
+Add a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
 ## Options
 - `entity` : *(Required)* The barometer entity to track.
@@ -28,7 +28,7 @@ The maximum and minimum bounds have a hover tooltip with their own values.
 
 ## Full examples
 ```yaml
-type: 'custom:barometer-gauge-card'
+type: 'custom:tempometer-gauge-card'
 entity: sensor.barometer
 entity_min: sensor.barometer_min_this_week
 entity_max: sensor.barometer_max_this_week
@@ -39,7 +39,7 @@ severity:
   red: 900
 ```
 ```yaml
-type: 'custom:barometer-gauge-card'
+type: 'custom:tempometer-gauge-card'
 entity: sensor.temperature
 entity_min: sensor.temperature_min_this_week
 entity_max: sensor.temperature_max_this_week
