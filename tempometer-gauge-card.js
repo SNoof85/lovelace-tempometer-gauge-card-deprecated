@@ -7,12 +7,6 @@ class TempometerGaugeCard extends HTMLElement {
     if (!config.entity) {
       throw new Error('Please define an entity');
     }
-	if (!config.entity_min) {
-		throw new Error('Please define a min_entity');
-	}
-	if (!config.entity_max) {
-		throw new Error('Please define a max_entity');
-	}
 	if (config.max === '') {
 		throw new Error('Please define the max config option');
 	}
@@ -283,7 +277,7 @@ class TempometerGaugeCard extends HTMLElement {
       green: "var(--label-badge-green)",
       yellow: "var(--label-badge-yellow)",
       normal: "var(--label-badge-blue)",
-    }
+    };
     if (!sections) return severityMap["normal"];
     let sortable = [];
     for (let severity in sections) {
@@ -312,18 +306,27 @@ class TempometerGaugeCard extends HTMLElement {
   }
 
   set hass(hass) {
+    const root = this.shadowRoot;
     const config = this._config;
     const entityState = this._getEntityStateValue(hass.states[config.entity], config.attribute);
-    const maxEntityState = this._getEntityStateValue(hass.states[config.entity_max], config.attribute);
-    const minEntityState = this._getEntityStateValue(hass.states[config.entity_min], config.attribute);
+    var maxEntityState = null;
+    var minEntityState = null;
+    if (config.entity_max !== undefined) {
+        maxEntityState = this._getEntityStateValue(hass.states[config.entity_max], config.attribute);
+    } else {
+        root.getElementById("recentMax").style.display = 'none';
+    }
+    if (config.entity_min !== undefined) {
+        minEntityState = this._getEntityStateValue(hass.states[config.entity_min], config.attribute);
+    } else {
+        root.getElementById("recentMin").style.display = 'none';
+    }
 
     let measurement = "";
     if (config.measurement == null)
       measurement = hass.states[config.entity].attributes.unit_of_measurement;
     else
       measurement = config.measurement;
-
-    const root = this.shadowRoot;
 
 	root.getElementById("minval").innerHTML = config.min;
 	root.getElementById("maxval").innerHTML = config.max;
@@ -336,17 +339,21 @@ class TempometerGaugeCard extends HTMLElement {
       root.getElementById("gauge").style.backgroundColor = this._computeSeverity(entityState, config.severity);
       this._entityState = entityState;
     }
-	if (maxEntityState !== this._maxEntityState) {
-		this._maxEntityState = maxEntityState;
-		const turn3 = this._translateTurn(maxEntityState, config) /10;  
-		root.getElementById("recentMax").style.transform = `rotate(${turn3}turn)`;
-		root.getElementById("svg_max_title").innerHTML = maxEntityState;
+	if (config.entity_max !== null) {
+	    if (maxEntityState !== this._maxEntityState) {
+		    this._maxEntityState = maxEntityState;
+		    const turn3 = this._translateTurn(maxEntityState, config) /10;  
+		    root.getElementById("recentMax").style.transform = `rotate(${turn3}turn)`;
+		    root.getElementById("svg_max_title").innerHTML = maxEntityState;
+	    }
 	}
-	if (minEntityState !== this._minEntityState) {
-		this._minEntityState = minEntityState;
-		const turn2 = this._translateTurn(minEntityState, config) /10;
-                root.getElementById("recentMin").style.transform = `rotate(${turn2}turn)`;
-		root.getElementById("svg_min_title").innerHTML = minEntityState;
+	if (config.entity_min !== null) {
+	    if (minEntityState !== this._minEntityState) {
+		    this._minEntityState = minEntityState;
+		    const turn2 = this._translateTurn(minEntityState, config) /10;
+            root.getElementById("recentMin").style.transform = `rotate(${turn2}turn)`;
+		    root.getElementById("svg_min_title").innerHTML = minEntityState;
+	    } 
 	}
     root.lastChild.hass = hass;
   }
