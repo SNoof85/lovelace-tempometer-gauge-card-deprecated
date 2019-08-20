@@ -46,7 +46,7 @@ severity:
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.temperature
-min: -10
+min: 15
 max: 30
 entity_min: sensor.temperature_min_this_week
 entity_max: sensor.temperature_max_this_week
