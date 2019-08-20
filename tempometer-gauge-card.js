@@ -13,10 +13,10 @@ class TempometerGaugeCard extends HTMLElement {
 	if (!config.entity_max) {
 		throw new Error('Please define a max_entity');
 	}
-	if (!config.max) {
+	if (config.max === '') {
 		throw new Error('Please define the max config option');
 	}
-	if (!config.min) {
+	if (config.min === '') {
 		throw new Error('Please define the min config option');
 	}
 
