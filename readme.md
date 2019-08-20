@@ -11,8 +11,11 @@ Add a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
 ## Options
 - `entity` : *(Required)* The barometer entity to track.
+- `min` : *(Required)* The gauge's minimum value
+- `max` : *(Required)* The gauge's maximum value
 - `entity_min` : *(Optional)* The entity that define the minimum pressure reached (you have to create this entity, the card will not compute it !)
 - `entity_max` : *(Optional)* The entity that define the maximum pressure reached (you have to create this entity, the card will not compute it !)
+- `min` : 
 - `title` : *(Optional)* Card title to show.
 - `style` : *(Optional)* Set this to thermometer to change icons to thermoter theme. (Default will be barometer theme)
 - `severity` : *(Optional)* Severity map to change the gauge color. See above.
@@ -30,6 +33,8 @@ The maximum and minimum bounds have a hover tooltip with their own values.
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.barometer
+min: 980
+max: 1050
 entity_min: sensor.barometer_min_this_week
 entity_max: sensor.barometer_max_this_week
 title: Barometer
@@ -41,6 +46,8 @@ severity:
 ```yaml
 type: 'custom:tempometer-gauge-card'
 entity: sensor.temperature
+min: -10
+max: 30
 entity_min: sensor.temperature_min_this_week
 entity_max: sensor.temperature_max_this_week
 title: Thermometer
