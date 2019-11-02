@@ -6,8 +6,11 @@ A Home Assistant lovelace custom gauge card for barometer or thermometer.
 
 ## Usage
 Add this custom card to your home assistant instance. Reference it into your lovelace configuration.
-
-Add a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
+```
+  - type: js
+    url: /local/lovelace/tempometer-gauge-card.js
+```
+Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
 ## Options
 - `entity` : *(Required)* The barometer entity to track.
