@@ -19,7 +19,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 - `entity_min` : *(Optional)* The entity that define the minimum pressure/temperature reached (you have to create this entity, the card will not compute it !)
 - `entity_max` : *(Optional)* The entity that define the maximum pressure/temerature reached (you have to create this entity, the card will not compute it !)
 - `title` : *(Optional)* Card title to show.
-- `style` : *(Optional)* Set this to `thermometer` to change icons to thermometer theme. (Default will be barometer theme)
+- `style` : *(Optional)* Set this to `thermometer` or `humidity` to change icons. (Default will be barometer theme)
 - `severity` : *(Optional)* Severity map to change the gauge color. See above.
 
 ```yaml
