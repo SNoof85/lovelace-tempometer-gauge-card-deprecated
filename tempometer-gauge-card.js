@@ -201,6 +201,17 @@ class TempometerGaugeCard extends HTMLElement {
     <path fill="#607D8B" d="M15 13V5A3 3 0 0 0 9 5V13A5 5 0 1 0 15 13M12 4A1 1 0 0 1 13 5H11A1 1 0 0 1 12 4Z"></path>
         </svg>
     </div>
+    <div id="gauge-icons-water" class="gauge-icons" style="display: none;">
+        <svg class="water-off" style="width: 18px;height: 18px;" viewBox="0 0 24 24">
+    <path fill="#607D8B" d="M17.12,17.12L12.5,12.5L5.27,5.27L4,6.55L7.32,9.87C6.55,11.32 6,12.79 6,14A6,6 0 0,0 12,20C13.5,20 14.9,19.43 15.96,18.5L18.59,21.13L19.86,19.86L17.12,17.12M18,14C18,10 12,3.2 12,3.2C12,3.2 10.67,4.71 9.27,6.72L17.86,15.31C17.95,14.89 18,14.45 18,14Z"></path>
+        </svg>
+        <svg class="water-percent" style="width: 18px;height: 18px;" viewBox="0 0 24 24">
+    <path fill="#607D8B" d="M12,3.25C12,3.25 6,10 6,14C6,17.32 8.69,20 12,20A6,6 0 0,0 18,14C18,10 12,3.25 12,3.25M14.47,9.97L15.53,11.03L9.53,17.03L8.47,15.97M9.75,10A1.25,1.25 0 0,1 11,11.25A1.25,1.25 0 0,1 9.75,12.5A1.25,1.25 0 0,1 8.5,11.25A1.25,1.25 0 0,1 9.75,10M14.25,14.5A1.25,1.25 0 0,1 15.5,15.75A1.25,1.25 0 0,1 14.25,17A1.25,1.25 0 0,1 13,15.75A1.25,1.25 0 0,1 14.25,14.5Z"></path>
+        </svg>
+        <svg class="water" style="width: 18px;height: 18px;" viewBox="0 0 24 24">
+    <path fill="#607D8B" d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z"></path>
+        </svg>
+    </div>
     <div class="container">
         <div class="gauge-a">
         </div>
@@ -238,9 +249,13 @@ class TempometerGaugeCard extends HTMLElement {
 	
 	if (card_style == "thermometer") {
 		root.getElementById("gauge-icons").style.display = 'none';
+		root.getElementById("gauge-icons-water").style.display = 'none';
 		root.getElementById("gauge-icons-thermo").style.display = 'block';
+	} else if (card_style == "humidity") {
+		root.getElementById("gauge-icons").style.display = 'none';
+		root.getElementById("gauge-icons-water").style.display = 'block';
+		root.getElementById("gauge-icons-thermo").style.display = 'none';
 	}
-  
   }
 
   _splitEntityAndAttribute(entity) {
