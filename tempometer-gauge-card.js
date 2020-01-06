@@ -127,6 +127,18 @@ class TempometerGaugeCard extends HTMLElement {
             float: right;
             padding-top: 3em;
         }
+      .water-off{
+            float: left;
+            padding-top: 3em;
+        }
+      .water-percent{
+            padding-top: .5em;
+            padding-right: 9px;
+        }
+      .water{
+            float: right;
+            padding-top: 3em;
+        }
       .gauge-footer{
             position: absolute;
             width: calc(var(--base-unit) *4);
