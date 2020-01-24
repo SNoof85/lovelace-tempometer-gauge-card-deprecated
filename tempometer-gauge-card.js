@@ -178,7 +178,7 @@ class TempometerGaugeCard extends HTMLElement {
     content.innerHTML = `
     <div id="gauge-icons" class="gauge-icons" style="display: none;">
         <ha-icon class="icon1" icon="${cardConfig.icon1}"></ha-icon>
-        <ha-icon lass="icon2" icon="${cardConfig.icon2}"></ha-icon>
+        <ha-icon class="icon2" icon="${cardConfig.icon2}"></ha-icon>
         <ha-icon class="icon3" icon="${cardConfig.icon3}"></ha-icon>
     </div>
     <div id="gauge-icons-baro" class="gauge-icons">
