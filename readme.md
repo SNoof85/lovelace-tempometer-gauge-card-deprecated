@@ -63,5 +63,22 @@ severity:
   yellow: 24
   red: 27
 ```
+```yaml
+type: 'custom:tempometer-gauge-card'
+entity: sensor.power
+min: 0
+max: 4000
+entity_min: sensor.power_min_this_week
+entity_max: sensor.power_max_this_week
+title: Power Meter
+style: custom
+icon1: mdi:flash-off
+icon2: mdi:flash-outline
+icon3: mdi:flash
+severity:
+  green: 1000
+  yellow: 2000
+  red: 3000
+```
 
 Maybe more to come ! PR are welcome and i can have a look to features requests.
