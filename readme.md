@@ -1,5 +1,5 @@
 # Lovelace tempometer-gauge-card
-A Home Assistant lovelace custom gauge card for barometer or thermometer.
+A Home Assistant lovelace custom gauge card for barometer, thermometer, humidity meter or anything you want with custom icons.
 
 ![Barometer style](https://user-images.githubusercontent.com/25659602/63027159-b7464980-beac-11e9-8d7a-2143eeead609.png)![Thermometer style](https://user-images.githubusercontent.com/25659602/63299603-76986700-c2d6-11e9-8739-e9cbb441a94b.png)![Custom style](https://user-images.githubusercontent.com/25659602/73101770-b9e3ab00-3ef0-11ea-9784-7f721de5a24c.png)
 
