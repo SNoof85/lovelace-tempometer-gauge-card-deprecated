@@ -20,6 +20,10 @@ class TempometerGaugeCard extends HTMLElement {
     const cardConfig = Object.assign({}, config);
     if (!cardConfig.scale) cardConfig.scale = "50px";
 
+    if (config.horizontal) {
+      cardConfig.scale = "40px";
+    }
+    
     const entityParts = this._splitEntityAndAttribute(cardConfig.entity);
     cardConfig.entity = entityParts.entity;
     if (entityParts.attribute) cardConfig.attribute = entityParts.attribute;
