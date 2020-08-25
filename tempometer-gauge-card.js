@@ -52,7 +52,7 @@ class TempometerGaugeCard extends HTMLElement {
       .gauge-a{
         z-index: 1;
         position: absolute;
-        background-color: var(--primary-background-color);
+        background-color: var(--card-background-color);
         width: calc(var(--base-unit) * 4);
         height: calc(var(--base-unit) * 2);
         top: 0%;
@@ -61,7 +61,7 @@ class TempometerGaugeCard extends HTMLElement {
       .gauge-b{
         z-index: 3;
         position: absolute;
-        background-color: var(--paper-card-background-color);
+        background-color: var(--card-background-color);
         width: calc(var(--base-unit) * 3.6);
         height: calc(var(--base-unit) * 2);
         top: calc(var(--base-unit) * 0.2);
@@ -137,7 +137,7 @@ class TempometerGaugeCard extends HTMLElement {
             font-size: calc(var(--base-unit) * 0.30);
             font-weight: 400;
             padding-top: .25em;
-            background: var(--paper-card-background-color);
+            background: var(--card-background-color);
         }
       .gauge-footer .minval{
             float: left;
