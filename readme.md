@@ -25,6 +25,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 - `icon2` : *(Optional) Icon on center in custom style.
 - `icon3` : *(Optional) Icon on right side in custom style.
 - `severity` : *(Optional)* Severity map to change the gauge color. See above.
+- `decimals` : *(Optional)* Decimal precision of entity value.
 
 ```yaml
 severity:
@@ -45,6 +46,7 @@ max: 1050
 entity_min: sensor.barometer_min_this_week
 entity_max: sensor.barometer_max_this_week
 title: Barometer
+decimals: 0
 severity:
   green: 1020
   yellow: 1000

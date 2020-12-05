@@ -319,7 +319,7 @@ class TempometerGaugeCard extends HTMLElement {
   set hass(hass) {
     const root = this.shadowRoot;
     const config = this._config;
-    const entityState = this._getEntityStateValue(hass.states[config.entity], config.attribute);
+    var entityState = this._getEntityStateValue(hass.states[config.entity], config.attribute);
     var maxEntityState = null;
     var minEntityState = null;
     if (config.entity_max !== undefined) {
@@ -342,6 +342,15 @@ class TempometerGaugeCard extends HTMLElement {
 	root.getElementById("minval").innerHTML = config.min;
 	root.getElementById("maxval").innerHTML = config.max;
     
+  // Set decimal precision
+  if (config.decimals !== undefined) {
+      // Only allow positive numbers
+      if (config.decimals >= 0) {
+        entityState = Math.round(parseFloat(entityState) * (10 ** config.decimals)) / (10 ** config.decimals)   // Round (https://stackoverflow.com/a/11832950)
+        entityState = entityState.toFixed(config.decimals)  // Add trailing zeroes if applicable        
+      }
+  }
+
 	if (entityState !== this._entityState) {
       root.getElementById("percent").textContent = `${entityState} ${measurement}`;
       root.getElementById("title").textContent = config.title;
