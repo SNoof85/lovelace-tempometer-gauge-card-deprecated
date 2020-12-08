@@ -14,18 +14,30 @@ Add this custom card to your home assistant instance. Reference it into your lov
 Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
 ## Options
-- `entity` : *(Required)* The barometer entity to track.
-- `min` : *(Required)* The gauge's minimum value
-- `max` : *(Required)* The gauge's maximum value
-- `entity_min` : *(Optional)* The entity that define the minimum pressure/temperature reached (you have to create this entity, the card will not compute it !)
-- `entity_max` : *(Optional)* The entity that define the maximum pressure/temerature reached (you have to create this entity, the card will not compute it !)
-- `title` : *(Optional)* Card title to show.
-- `style` : *(Optional)* Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !)
-- `icon1` : *(Optional) Icon on left side in custom style.
-- `icon2` : *(Optional) Icon on center in custom style.
-- `icon3` : *(Optional) Icon on right side in custom style.
-- `severity` : *(Optional)* Severity map to change the gauge color. See above.
+### Card options
+| **Option** | **Type** | **Description** |
+|-|:-:|-|
+| `entity` ***(required)*** | string | The barometer entity to track. |
+| `min` ***(required)*** | number | The gauge's minimum value |
+| `max` ***(required)*** | number | The gauge's maximum value |
+| `entity_min` | string | The entity that define the minimum pressure/temperature reached (you have to create this entity, the card will not compute it !) |
+| `entity_max` | string | The entity that define the maximum pressure/temerature reached (you have to create this entity, the card will not compute it !) |
+| `title` | string | Card title to show. |
+| `style` | string | Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !) |
+| `icon1` | string | Icon on left side in custom style. |
+| `icon2` | string | Icon on center in custom style. |
+| `icon3` | string | Icon on right side in custom style. |
+| `severity` | [severity object](#severity-object) | Severity map to change the gauge color. |
+| `decimals` | number | Decimal precision of entity value. |
 
+#### Severity object
+| **Option** | **Type** | **Description** |
+|-|:-:|-|
+| green ***(required)*** | number | Value for the color green.
+| yellow ***(required)*** | number | Value for the color yellow.
+| red ***(required)*** | number | Value for the color red.
+
+Example:
 ```yaml
 severity:
   green: 1020
@@ -45,6 +57,7 @@ max: 1050
 entity_min: sensor.barometer_min_this_week
 entity_max: sensor.barometer_max_this_week
 title: Barometer
+decimals: 0
 severity:
   green: 1020
   yellow: 1000
