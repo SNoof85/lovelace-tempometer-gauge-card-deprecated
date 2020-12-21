@@ -24,6 +24,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 | `entity_max` | string | The entity that define the maximum pressure/temerature reached (you have to create this entity, the card will not compute it !) |
 | `title` | string | Card title to show. |
 | `style` | string | Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !) |
+| `measurement` | string | Custom unit of measurement |
 | `icon1` | string | Icon on left side in custom style. |
 | `icon2` | string | Icon on center in custom style. |
 | `icon3` | string | Icon on right side in custom style. |
