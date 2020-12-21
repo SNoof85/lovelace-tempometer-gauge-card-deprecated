@@ -334,10 +334,15 @@ class TempometerGaugeCard extends HTMLElement {
     }
 
     let measurement = "";
-    if (config.measurement == null)
-      measurement = hass.states[config.entity].attributes.unit_of_measurement;
-    else
+    if (config.measurement == null) {
+      if (hass.states[config.entity].attributes.unit_of_measurement === undefined) {
+        measurement = '';
+      } else {
+        measurement = hass.states[config.entity].attributes.unit_of_measurement;
+      }
+    } else {
       measurement = config.measurement;
+    }
 
 	root.getElementById("minval").innerHTML = config.min;
 	root.getElementById("maxval").innerHTML = config.max;
