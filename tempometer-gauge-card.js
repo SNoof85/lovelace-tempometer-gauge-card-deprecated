@@ -295,15 +295,23 @@ class TempometerGaugeCard extends HTMLElement {
       sortable.push([severity, sections[severity]]);
     }
     sortable.sort((a, b) => { return a[1] - b[1] });
-
     if (numberValue >= sortable[0][1] && numberValue < sortable[1][1]) {
       return severityMap[sortable[0][0]];
     }
     if (numberValue >= sortable[1][1] && numberValue < sortable[2][1]) {
       return severityMap[sortable[1][0]];
     }
-    if (numberValue >= sortable[2][1]) {
-      return severityMap[sortable[2][0]];
+    if (sortable.length === 4) {
+      if (numberValue >= sortable[2][1] && numberValue < sortable[3][1]) {
+        return severityMap[sortable[2][0]];
+      }
+      if (numberValue > sortable[3][1]) {
+        return severityMap["normal"]
+      }
+    } else {
+      if (numberValue >= sortable[2][1]) {
+        return severityMap[sortable[2][0]];
+      }
     }
     return severityMap["normal"];
   }
