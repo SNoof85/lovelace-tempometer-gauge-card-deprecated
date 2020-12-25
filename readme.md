@@ -6,11 +6,14 @@ A Home Assistant lovelace custom gauge card for barometer, thermometer, humidity
 
 
 ## Usage
+* Recommended : Install via HACS => https://hacs.xyz/
+* Manual :
 Add this custom card to your home assistant instance. Reference it into your lovelace configuration.
 ```
   - type: js
     url: /local/lovelace/tempometer-gauge-card.js
 ```
+
 Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
 ## Options
