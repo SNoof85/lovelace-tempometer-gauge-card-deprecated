@@ -37,6 +37,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 | green ***(required)*** | number | Value for the color green.
 | yellow ***(required)*** | number | Value for the color yellow.
 | red ***(required)*** | number | Value for the color red.
+| max | number | Maximum value of the last step, normal color will be rendered above
 
 Example:
 ```yaml
@@ -44,6 +45,7 @@ severity:
   green: 1020
   yellow: 1000
   red: 900
+  max: 1100
 ```
 
 ## Tip
@@ -94,6 +96,7 @@ severity:
   green: 1000
   yellow: 2000
   red: 3000
+  max: 5000
 ```
 
 Maybe more to come ! PR are welcome and i can have a look to features requests.
