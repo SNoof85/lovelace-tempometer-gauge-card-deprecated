@@ -1,5 +1,6 @@
 {
   "name": "Tempometer Gauge Card",
   "render_readme": true,
+  "content_in_root": true,
   "filename": "tempometer-gauge-card.js"
 }
