@@ -1,9 +1,7 @@
 # Lovelace tempometer-gauge-card
 A Home Assistant lovelace custom gauge card for barometer, thermometer, humidity meter or anything you want with custom icons.
-
-![Barometer style](https://user-images.githubusercontent.com/25659602/63027159-b7464980-beac-11e9-8d7a-2143eeead609.png)![Thermometer style](https://user-images.githubusercontent.com/25659602/63299603-76986700-c2d6-11e9-8739-e9cbb441a94b.png)![Custom style](https://user-images.githubusercontent.com/25659602/73101770-b9e3ab00-3ef0-11ea-9784-7f721de5a24c.png)
-
-
+![pressure-and-temp](https://user-images.githubusercontent.com/25659602/106396921-2dc16900-640b-11eb-9921-baabe2fdb378.png)
+![humidity-and-custom](https://user-images.githubusercontent.com/25659602/106397020-a9231a80-640b-11eb-882e-3b38cde7fa69.png)
 
 ## Usage
 Add this custom card to your home assistant instance. Reference it into your lovelace configuration.
