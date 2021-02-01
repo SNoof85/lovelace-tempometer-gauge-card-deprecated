@@ -16,7 +16,8 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 ### Card options
 | **Option** | **Type** | **Description** |
 |-|:-:|-|
-| `entity` ***(required)*** | string | The barometer entity to track. |
+| `entity` ***(required)*** | string | The entity to track. |
+| `attribute`| string | The entity attribute to track. |
 | `min` ***(required)*** | number | The gauge's minimum value |
 | `max` ***(required)*** | number | The gauge's maximum value |
 | `entity_min` | string | The entity that define the minimum pressure/temperature reached (you have to create this entity, the card will not compute it !) |
