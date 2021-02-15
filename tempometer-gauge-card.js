@@ -30,11 +30,11 @@ class TempometerGaugeCard extends HTMLElement {
     if (entityParts.attribute) cardConfig.attribute = entityParts.attribute;
 
     const entityMinParts = this._splitEntityAndAttribute(cardConfig.entity_min);
-    cardConfig.entity_min = entityParts.entity_min;
+    cardConfig.entity_min = entityMinParts.entity_min;
     if (entityMinParts.attribute) cardConfig.minAttribute = entityMinParts.attribute;
 
     const entityMaxParts = this._splitEntityAndAttribute(cardConfig.entity_max);
-    cardConfig.entity_max = entityParts.entity_max;
+    cardConfig.entity_max = entityMaxParts.entity_max;
     if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
 
     let card_style = cardConfig.style;
