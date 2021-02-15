@@ -1,4 +1,4 @@
-console.info(`%c TEMPOMETER-CARD \n%c      v0.7       `, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
+console.info(`%c TEMPOMETER-CARD \n%c      v1.1       `, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
 class TempometerGaugeCard extends HTMLElement {
   constructor() {
     super();
