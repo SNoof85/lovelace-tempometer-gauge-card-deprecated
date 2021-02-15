@@ -29,7 +29,15 @@ class TempometerGaugeCard extends HTMLElement {
     cardConfig.entity = entityParts.entity;
     if (entityParts.attribute) cardConfig.attribute = entityParts.attribute;
 
-	let card_style = cardConfig.style;
+    const entityMinParts = this._splitEntityAndAttribute(cardConfig.entity_min);
+    cardConfig.entity_min = entityParts.entity_min;
+    if (entityMinParts.attribute) cardConfig.minAttribute = entityMinParts.attribute;
+
+    const entityMaxParts = this._splitEntityAndAttribute(cardConfig.entity_max);
+    cardConfig.entity_max = entityParts.entity_max;
+    if (entityMaxParts.attribute) cardConfig.maxAttribute = entityMaxParts.attribute;
+
+    let card_style = cardConfig.style;
     const card = document.createElement('ha-card');
     const content = document.createElement('div');
     const style = document.createElement('style');
@@ -332,12 +340,12 @@ class TempometerGaugeCard extends HTMLElement {
     var maxEntityState = null;
     var minEntityState = null;
     if (config.entity_max !== undefined) {
-        maxEntityState = this._getEntityStateValue(hass.states[config.entity_max], config.attribute);
+        maxEntityState = this._getEntityStateValue(hass.states[config.entity_max], config.maxAttribute);
     } else {
         root.getElementById("recentMax").style.display = 'none';
     }
     if (config.entity_min !== undefined) {
-        minEntityState = this._getEntityStateValue(hass.states[config.entity_min], config.attribute);
+        minEntityState = this._getEntityStateValue(hass.states[config.entity_min], config.minAttribute);
     } else {
         root.getElementById("recentMin").style.display = 'none';
     }
