@@ -22,12 +22,11 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 ### Card options
 | **Option** | **Type** | **Description** |
 |-|:-:|-|
-| `entity` ***(required)*** | string | The entity to track. |
-| `attribute`| string | The entity attribute to track. |
+| `entity` ***(required)*** | string | The entity to track. Can be followed by an attribute to track `entity.attribute)`|
 | `min` ***(required)*** | number | The gauge's minimum value |
 | `max` ***(required)*** | number | The gauge's maximum value |
-| `entity_min` | string | The entity that define the minimum pressure/temperature reached (you have to create this entity, the card will not compute it !) |
-| `entity_max` | string | The entity that define the maximum pressure/temerature reached (you have to create this entity, the card will not compute it !) |
+| `entity_min` | string | The entity that define the minimum reached. Can be followed by an attribute to track `entity.attribute)` (you have to create this entity, the card will not compute it !) |
+| `entity_max` | string | The entity that define the maximum reached. Can be followed by an attribute to track `entity.attribute)` (you have to create this entity, the card will not compute it !) |
 | `title` | string | Card title to show. |
 | `style` | string | Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !) |
 | `measurement` | string | Custom unit of measurement |
