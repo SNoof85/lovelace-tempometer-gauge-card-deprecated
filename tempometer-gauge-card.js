@@ -1,4 +1,4 @@
-console.info(`%c TEMPOMETER-CARD \n%c      v1.2       `, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
+console.info(`%c TEMPOMETER-CARD \n%c      v1.3       `, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
 class TempometerGaugeCard extends HTMLElement {
   constructor() {
     super();
@@ -124,21 +124,21 @@ class TempometerGaugeCard extends HTMLElement {
       .icon1{
             width: 18px;
             height: 18px;
-            fill: #607D8B;
+            color: var(--paper-item-icon-color);
             float: left;
             padding-top: 3em;
         }
       .icon2{
             width: 18px;
             height: 18px;
-            fill: #607D8B;
+            color: var(--paper-item-icon-color);
             padding-top: .5em;
             padding-right: 9px;
         }
       .icon3{
             width: 18px;
             height: 18px;
-            fill: #607D8B;
+            color: var(--paper-item-icon-color);
             float: right;
             padding-top: 3em;
         }
