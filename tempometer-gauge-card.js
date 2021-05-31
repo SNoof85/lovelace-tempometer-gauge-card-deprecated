@@ -47,7 +47,7 @@ class TempometerGaugeCard extends HTMLElement {
         var icon_color = "var(--paper-item-icon-color)";
     }
 	    
-    let card_style = cardConfig.style;
+    let card_style = cardConfig.card_style;
     const card = document.createElement('ha-card');
     const content = document.createElement('div');
     const style = document.createElement('style');
