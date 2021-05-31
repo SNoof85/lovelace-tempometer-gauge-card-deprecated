@@ -33,6 +33,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 | `icon1` | string | Icon on left side in custom style. |
 | `icon2` | string | Icon on center in custom style. |
 | `icon3` | string | Icon on right side in custom style. |
+| `icon_color` | string | Icon Color (Default var(--paper-item-icon-color))
 | `severity` | [severity object](#severity-object) | Severity map to change the gauge color. |
 | `decimals` | number | Decimal precision of entity value. |
 
