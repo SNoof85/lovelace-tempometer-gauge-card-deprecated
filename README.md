@@ -28,7 +28,7 @@ Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 | `entity_min` | string | The entity that define the minimum reached. Can be followed by an attribute to track `entity.attribute)` (you have to create this entity, the card will not compute it !) |
 | `entity_max` | string | The entity that define the maximum reached. Can be followed by an attribute to track `entity.attribute)` (you have to create this entity, the card will not compute it !) |
 | `title` | string | Card title to show. |
-| `style` | string | Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !) |
+| `card_style` | string | Set this to `thermometer`, `humidity` or `custom` to change icons. (Default will be barometer theme, custom will need icon1, icon2, icon3 !) |
 | `measurement` | string | Custom unit of measurement |
 | `icon1` | string | Icon on left side in custom style. |
 | `icon2` | string | Icon on center in custom style. |
