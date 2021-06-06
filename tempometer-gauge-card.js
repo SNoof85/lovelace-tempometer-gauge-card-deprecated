@@ -1,4 +1,4 @@
-console.info(`%c TEMPOMETER-CARD \n%c      v1.31      `, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
+console.info(`%c TEMPOMETER-CARD \n%c      v1.4-beta.1`, 'color: orange; font-weight: bold; background: black', 'color: white; font-weight: bold; background: dimgray');
 class TempometerGaugeCard extends HTMLElement {
   constructor() {
     super();
@@ -47,7 +47,7 @@ class TempometerGaugeCard extends HTMLElement {
         var icon_color = "var(--paper-item-icon-color)";
     }
 	    
-    let card_style = cardConfig.style;
+    let card_style = cardConfig.card_style;
     const card = document.createElement('ha-card');
     const content = document.createElement('div');
     const style = document.createElement('style');
