@@ -80,7 +80,7 @@ max: 30
 entity_min: sensor.temperature_min_this_week
 entity_max: sensor.temperature_max_this_week
 title: Thermometer
-style: thermometer
+card_style: thermometer
 severity:
   green: 22
   yellow: 24
@@ -94,7 +94,7 @@ max: 4000
 entity_min: sensor.power_min_this_week
 entity_max: sensor.power_max_this_week
 title: Power Meter
-style: custom
+card_style: custom
 icon1: mdi:flash-off
 icon2: mdi:flash-outline
 icon3: mdi:flash
