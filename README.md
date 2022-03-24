@@ -18,6 +18,9 @@ Add this custom card to your home assistant instance. Reference it into your lov
 Finally :
 Add it as a custom card to your lovelace : `'custom:tempometer-gauge-card'`.
 
+Note :
+This card is made for a full row, don't try to put it in a grid or horizontal stack, it will look bad. I won't fix this.
+
 ## Options
 ### Card options
 | **Option** | **Type** | **Description** |
